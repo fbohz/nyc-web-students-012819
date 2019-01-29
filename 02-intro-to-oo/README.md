@@ -3,6 +3,33 @@ Intro to Object Orientation
 
 aka: Object Oriented Programming (OOP)
 
+
+## Lecture Notes
+
+# What is an object
+
+data
+point where data is stored
+'encapsulates state'
+
+behavior
+what a thing can do
+'encapsulates behavior'
+
+data + behavior together in one object
+
+{
+  player_name: "Alan Anderson",
+  number: 0,
+  shoe: 16,
+  points: 22,
+  rebounds: 12,
+  assists: 12,
+  steals: 3,
+  blocks: 1,
+  slam_dunks: 1
+}
+
 ## Exercise
 
 Here is a naive implementation of a bank account in Ruby using only a hash which stores key-value pairs.
@@ -19,7 +46,6 @@ Write an implementation of a bank account that meets the following requirements:
 * keeps track of the account number
 * keeps track of the customer id of the account
 
-## Lecture Notes
 
 
 ## Resources
