@@ -1,5 +1,6 @@
 require 'pry'
 require_relative './lib/book.rb'
+require_relative './lib/player.rb'
 
 player = {
   player_name: "Alan Anderson",
@@ -12,6 +13,9 @@ player = {
   blocks: 1,
   slam_dunks: 1
 }
+
+
+
 
 
 calvin_and_hobbes = {
@@ -27,6 +31,8 @@ master_and_marg = {
 book1 = Book.new("the essential calvin and hobbes", ["bill watterson", "charles schulz"])
 book2 = Book.new("the master and margarita", ["mikhail bulgakov"])
 
-binding.pry
+player = Player.new("Alan Anderson", 0, 16, 22, 12)
+
+Pry.start
 
 'bye'
