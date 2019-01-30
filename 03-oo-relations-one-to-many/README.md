@@ -3,8 +3,9 @@ Intro to Object Orientation
 
 ## Lecture Notes
 
-Has Many / Belongs to
-Single Source of truth
+* Has Many / Belongs to
+
+* Single Source of truth
 
 #### Where we've been
 
