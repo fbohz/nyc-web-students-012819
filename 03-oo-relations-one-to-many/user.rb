@@ -13,6 +13,8 @@ class User
   end
 
   def post_tweet(message)
-    # Tweet.new ....
+    new_tweet = Tweet.new(message, self)
+    @tweets << new_tweet
+    new_tweet
   end
 end

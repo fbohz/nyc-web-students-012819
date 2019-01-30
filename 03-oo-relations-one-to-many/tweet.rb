@@ -11,6 +11,10 @@ class Tweet
     @@all << self
   end
 
+  def username
+    self.user.username
+  end
+
   def self.all
     @@all
   end
