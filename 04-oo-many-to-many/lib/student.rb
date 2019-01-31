@@ -20,6 +20,9 @@ class Student
 
   def documents
     # return an array of Document objects that have been signed by this student
+    self.signatures.map do |signature|
+      signature.document
+    end
   end
 
 end
