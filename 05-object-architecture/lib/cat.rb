@@ -2,6 +2,7 @@ class Cat < Pet
   include Huggable
   # include is for Instance methods
   include Pescatarianable
+
   # extend is for class methods
   # extend Module
 

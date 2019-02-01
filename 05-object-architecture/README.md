@@ -1,5 +1,6 @@
 # Lecture Notes
 
+> Great Example of when to use Modules vs. Inheritance https://stackoverflow.com/questions/1282864/ruby-inheritance-vs-mixins
 
 # DRY
 Don't Repeat Yourself
