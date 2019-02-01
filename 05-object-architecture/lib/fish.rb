@@ -1,3 +1,3 @@
-class Fish
-  # code goes here
+class Fish < Pet
+  include Pescatarianable
 end

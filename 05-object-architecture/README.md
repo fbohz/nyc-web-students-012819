@@ -1,3 +1,62 @@
+# Lecture Notes
+
+
+# DRY
+Don't Repeat Yourself
+ - Code that is reusable
+
+methods
+get_all_players (_encapsulate_)
+abstraction - we can use this method as a black box
+
+classes and oo
+grouping of methods together
+
+
+Modules
+-able
+- CANNOT make a new instance of a module
+- only grouping together of like methods
+
+Namespacing
+
+ActiveRecord
+
+module ActiveRecord
+  class Base
+  end
+end
+
+class Dog < ActiveRecord::Base
+
+Sinatra
+
+class Base
+end
+
+class Dog
+  def make_noise
+    "bark"
+  end
+end
+
+class Cat
+  def make_noise
+    "meow"
+  end
+end
+
+
+def make_noise
+
+end
+
+cat < Pet
+dog < Pet
+fish < Pet
+
+
+
 # My Pets
 
 ## Objective
