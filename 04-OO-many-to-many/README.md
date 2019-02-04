@@ -1,28 +1,39 @@
-# Many to Many Relationships
-
-Based off of yesterday's code, we're going to add the ability to like a tweet. We describe this specific relationship between users and tweets as a many to many relationship. Meaning that a user can like many tweets and a tweet can be liked by many users!
-
-> **Note:** This is a separate relationship from the one to many that we built before. That relationship could be called "posted tweets" whereas this relationship should be called "liked tweets".
-
-## The world so far
-
-* Create a User class. The class should have these methods:
-  * `#initialize` which takes a username and have
-  * a reader method for the username
-  * `#tweets` that returns an array of Tweet instances
-  * `#post_tweet` that takse a message, creates a new tweet, and adds it to the user's tweet collection
-* Create a Tweet class. The class should have these methods:
-  * `Tweet#message` that returns a string
-  * `Tweet#user` that returns an instance of the user class
-  * `Tweet.all` that returns all the Tweets created.
-  * `Tweet#username` that returns the username of the tweet's user
+# Object Oriented Kickstarter
 
 ## Objectives
 
-## Deliverables
+1. Build classes that produce objects that relate to one another. 
 
-* User class
-  * `#like_tweet` that accepts as a tweet instance as a parameter
-  * `#liked_tweets` that returns a collection of all the tweets this user has liked
-* Tweet class
-  * `#likers` that returns a collection of all the Users who have liked this tweet
+## Description
+
+In this lab, we are going to be creating a very, very simple version of Kickstarter. We'll have Projects and Backers (and no concept of money at all), and they will need to interact with one another in a realistic way.
+
+We want our interface to work something like this:
+
+```ruby
+bob = Backer.new("Bob")
+awesome_project = Project.new("This is an Awesome Project")
+
+bob.back_project(awesome_project)
+
+bob.backed_projects
+# => #<Project:0x000001018683d0 @title="This is an Awesome Project"...>
+
+awesome_project.backers
+# => #<Backer:0x000001018b9370 @name="Bob"...>
+```
+
+## Instructions
+
+The specs have been set to run in default order, and are written in such a way that tests for the Backer and Project classes are mixed in with one another. This is not how you'd normally see specs for multiple objects. For the purposes of this lab, though, following the specs, in order, will eventually lead you to the correct relationships between your classes.
+
+A few hints to get you started: 
+
+* When a `Backer` instance is initialized, it should be initialized with a `@backed_projects` variable set to an empty array. Instances of the `Backer` class should have an `attr_accessor` for backed projects so that projects can be added to a backer's list and so that the backer can report on the projects they back. 
+* When a `Project` instance is initialized, it should be initialized with a `@backers` variable set to an empty array. Instances of the `Project` class should have an `attr_accessor` for backers so that projects can add backers to their list of backers and report on the backers who support them. 
+* When a backer has added a project to its list of backed projects, that project should *also add the backer to its list of backers*. Refer back to the Code Along about Collaborating Objects.
+
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/oo-kickstarter' title='Object Oriented Kickstarter'>Object Oriented Kickstarter</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/oo-kickstarter'>OO Kickstarter</a> on Learn.co and start learning to code for free.</p>
