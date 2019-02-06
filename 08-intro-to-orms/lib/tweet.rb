@@ -24,7 +24,7 @@ class Tweet
     @message = row_hash['message']
     @user_id = row_hash['user_id']
 
-    @id = props['id']
+    @id = row_hash['id']
   end
 
   def save
