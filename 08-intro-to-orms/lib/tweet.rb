@@ -1,5 +1,5 @@
 class Tweet
-  attr_accessor :message, :username
+  attr_accessor :message, :user_id
   ALL = []
 
   def self.all
@@ -8,7 +8,10 @@ class Tweet
 
   def initialize(props={})
     @message = props['message']
-    @username = props['username']
-    ALL << self
+    @user_id = props['user_id']
+  end
+
+  def save
+    self.class.all << self
   end
 end

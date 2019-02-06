@@ -6,6 +6,7 @@
 
 # CRUD REVIEW
 
+
 What are the four ways we can interact with data?
 
 ## Domain Modeling and SQL Review
@@ -14,7 +15,23 @@ Draw out what your schema (structure of your tables and columns) would be for th
 
 1. Books and Authors where each book has a single author. Books should have a title and authors should have a name
 
+Tweet.new('coffe#', user)
+books
+id |  title                                   | author_id
+1   Practical Object Oriented Design in Ruby   1
+2   Secrets of the Javascript ninja            2
+3   99 Bottles of OOP                          1
+
+authors
+id | name         |
+1     Sandi Metz            
+2   John Resig                 
+
 Q: Write the SQL to find all books written by a certain author given the author's id.
+Q: Write the SQL to find all books written by a certain author given the author's name.
+SELECT * FROM books WHERE author_id = 1
+SELECT * FROM books JOIN authors ON authors.id = books.author_id WHERE authors.name = 'whatever'
+
 
 
 2. Books and Authors where each book can have one or multiple authors. Books should have a title and authors should have a name
@@ -31,11 +48,3 @@ Q: Write the SQL to find all the tweets tagged '#tbt'
 
 
 ## Lecture Notes
-
-A tweet belongs to a user and has some message content  - must have user_id
-
-The belongs_to must have a user_id on it
-
-A user has a username, and has many tweets
-
-A tweet can have many tags and a tag can have many tweets
