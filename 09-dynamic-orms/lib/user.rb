@@ -1,3 +1,3 @@
-class User
-  # TODO: bring in code from 08
+class User < ActiveRecord::Base
+
 end

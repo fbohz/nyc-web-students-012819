@@ -7,6 +7,7 @@ We should be able to
   * Call methods on the child class to interact with the DB
 
 ## Active Record Pattern
-* Tables:
-* Rows:
-* Columns:
+ORM
+* Tables <> Classes (Models)
+* Rows (Records) <> Instances
+* Columns <> attributes of each instance
