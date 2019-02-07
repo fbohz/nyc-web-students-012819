@@ -18,5 +18,7 @@ DB[:conn].results_as_hash = true
 # Logger
 # ActiveRecord::Base.logger = Logger.new(STDOUT)
 
+# require_relative '../lib/dynamic_record.rb'
+require_relative '../lib/user.rb'
 require_relative '../lib/tweet.rb'
 require_relative '../lib/tweets_app.rb'

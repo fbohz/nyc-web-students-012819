@@ -56,6 +56,15 @@ class Tweet
     SQL
     # binding.pry
     DB[:conn].execute(sql, self.message, self.user_id)
+
+    last_row_sql = <<-SQL
+    SELECT *
+    FROM tweets
+    ORDER BY id DESC
+    LIMIT 1
+    SQL
+    @id = DB[:conn].execute(last_row_sql)[0]["id"]
+    self
   end
 
   def update_record
@@ -66,6 +75,7 @@ class Tweet
     SQL
 
     DB[:conn].execute(sql, self.message, self.user_id)
+    self
   end
 end
 
