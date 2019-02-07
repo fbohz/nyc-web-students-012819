@@ -1,7 +1,7 @@
 class DynamicRecord
 
   # attr_accessor(:message, :user_id)
-  attr_reader(:id)
+  attr_reader :id
   # ALL = []
 
   def self.table_name

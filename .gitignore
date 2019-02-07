@@ -1,0 +1,2 @@
+10-activerecord/db/*.db
+10-activerecord/db/*.sqlite
