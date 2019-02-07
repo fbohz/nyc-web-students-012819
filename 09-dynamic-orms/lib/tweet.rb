@@ -1,8 +1,10 @@
 class Tweet < ActiveRecord::Base
 
-  def user
-    # .find_by, .find, .where <- pay attention to the return value
-  end
+  belongs_to :user
+  # def user
+  #   # .find_by, .find, .where <- pay attention to the return value
+  #   User.find(self.user_id)
+  # end
 
 end
 
