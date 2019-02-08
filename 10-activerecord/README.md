@@ -1,5 +1,11 @@
-Intro to Active Record
+Active Record
 ======================
+
+
+SQL
+Squirrel-Based Learning
+
+# Create a new Migration to add an integer column to the acorns table
 
 
 ## Lecture Notes
