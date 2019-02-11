@@ -2,12 +2,13 @@
 
 ### Define
 
+* Request / Response
 * GET requests
 * Server responses
 * Developer console
 * APIs
 
-* JSON 
+* JSON
 
 ### Deliverables
 
