@@ -23,15 +23,15 @@ module GoogleBooks
       data = JSON.parse(response.body)
       #iterate over all the books in that response
       books = data['items'].each do |book_data|
-        book = Book.find_or_initialize_by(title: book_data['volumeInfo']['title'], description: book_data['volumeInfo']['description'])
+        book = Book.find_or_initialize_by(title: book_data['volumeInfo']['title'], snippet: book_data['volumeInfo']['description'])
 
-        if  book_data['volumeInfo']['authors']
-          author_name =  book_data['volumeInfo']['authors'].first
-          author = Author.find_or_create_by(name: author_name)
-        end
+        # if  book_data['volumeInfo']['authors']
+        #   author_name =  book_data['volumeInfo']['authors'].first
+        #   author = Author.find_or_create_by(name: author_name)
+        # end
 
         # create and save the book objects and associated authors
-        book.author = author
+        # book.author = author
 
         book.save
 

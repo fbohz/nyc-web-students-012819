@@ -24,9 +24,9 @@
 ### New!
 
 MVC
-- *Model*:
-- *Controller*:
-- *View*:
+- *Model*: Classes, interact with thhe Databse, corresponds to tables
+- *Controller*: Everything in the middle
+- *View*: frontend, what the users sees
 
 
 - *RESTful Routing (REST)*:
@@ -34,16 +34,23 @@ MVC
   - CRUD maps to HTTP Verbs and RESTful routes
 
 - REST =>
+REpresentational State Transfer
 
+
+/teams/25/players
 
 
 ## Deliverables
 
 We have a new question to ask about each deliverable
+DOes my schema need to change?
+What routes do i need?
 
 - view all books
+/books
 
 - view information on an individual book
+/books/:id
 
 - create a new book
 
