@@ -26,15 +26,26 @@ class BooksController < Sinatra::Base
     erb :show
   end
 
+
+  # edit action
   get '/books/:id/edit' do
-    raise "We are here"
+
     # find the particular book we are trying to edit
+    @book = Book.find(params[:id])
 
     # render out a form,
     # i would expect that this form is pre-populated with the info about the book
     erb :edit
   end
 
+  # update action
+  patch '/books/:id' do
+    # find the particular book we're editing
+    # use the values in the params to update it
+    book = Book.find(params[:id])
+    book.update(title: params[:title], snippet: params[:snippet])
 
+    redirect "/books/#{book.id}"
+  end
 
 end
