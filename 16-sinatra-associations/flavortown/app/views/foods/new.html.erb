@@ -1,0 +1,16 @@
+<h1>Insert the form to create a new instance of your model.</h1>
+
+<form action="/foods" method="post">
+  <label for="name">NAME THAT FOOD!</label>
+  <input type="text" name="name" value=""></br>
+  Calszz: <input type="number" name="calories" value=""></br>
+  WHICH ONE ATE IT? 🐶🤮
+  <select name="user_id">
+  <%   @users.each do |user| %>
+    <option value="<%= user.id %>"><%= user.nickname %></option>
+
+    <% end  %>
+  </select>
+  <input type="submit">
+
+</form>
