@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  people: 1
+  food: false
+  start_time: MyString
+  end_time: MyString
+  incredible: 1
+  location: MyString
+
+two:
+  title: MyString
+  people: 1
+  food: false
+  start_time: MyString
+  end_time: MyString
+  incredible: 1
+  location: MyString

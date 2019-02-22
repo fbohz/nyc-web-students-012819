@@ -1,0 +1,10 @@
+<h1>PARTIES ARE THE GREATEST THING EVER</h1>
+
+
+<ul>
+<% @parties.each do |party| %>
+  <li>
+    <%= link_to party.title, party_path(party) %>
+  </li>
+<% end %>
+</ul>
