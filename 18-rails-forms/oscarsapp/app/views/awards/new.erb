@@ -1,0 +1,31 @@
+<p> cool</p>
+
+
+
+<h2> FORM TAG</h2>
+<%= form_tag('/awards') %>
+<%= text_field_tag 'award[name]' %>
+<%= text_field_tag 'award[category]' %>
+<%= text_field_tag 'award[winner]' %>
+<%= text_field_tag 'award[year]' %>
+<%= submit_tag "submit THAT FORM" %>
+<!-- form_for  -->
+
+<!--
+link_to
+
+button_to
+button_tag -->
+
+
+
+<h3> FORM FOR</h3>
+
+<%= form_for @award do |f| %>
+
+  <%= f.text_field :name %>
+  <%= f.text_field :category %>
+  <%= f._field :year %>
+  <%= f.text_field :winner %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+
+<h3> EDIT</h3>
+
+<%= form_for @award do |f| %>
+
+  <%= f.text_field :name %>
+  <%= f.text_field :category %>
+  <%= f.number_field :year %>
+  <%= f.text_field :winner %>
+  <%= f.submit %>
+<% end %>
