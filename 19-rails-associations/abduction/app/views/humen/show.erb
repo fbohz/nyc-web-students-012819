@@ -1,0 +1,11 @@
+<h2> SHOW Me HUUUMANNN</h2>
+
+
+
+<label for="">NAME</label><p><%= @human.nickname %></p>
+<label for="">age</label><p><%= @human.age%></p>
+<label for="">last seen</label><p><%= @human.last_seen %></p>
+<label for="">Are you missing?? 🤫🤔</label><p><%= @human.missing %></p>
+<label for="">THE ALIEN THAT DONE GOT ME</label>
+<p><%= @human.alien.meepmorp %></p>
+<%= link_to "TEXT THAT DISPLAYS", alien_path(@human.alien) %>

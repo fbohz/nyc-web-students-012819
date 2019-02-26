@@ -1,0 +1,21 @@
+<h1> NEW HUUMAN for abduction</h1>
+
+<%= form_for @human do |f| %>
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :last_seen %>
+  <%= f.text_field :last_seen %>
+  <%= f.label :missing %>
+  <%= f.check_box :missing %>
+  <%= f.collection_select(:alien_id, Alien.all, :id, :meepmorp, prompt: true) %>
+  <%= f.submit %>
+<% end %>
+
+
+ <%#  1. Object for collection select%>
+ <%#  2. the Key that comes across on params%>
+ <%#  3. WHAT DO WE ITERATE OVER%>
+ <%#  4. THE VALUE that comes across on params%>
+ <%#  5. WHAT method do we call to display on the page%>
