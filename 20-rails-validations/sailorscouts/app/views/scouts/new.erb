@@ -1,0 +1,17 @@
+<h1> NEW SCOUT POWERfull</h1>
+
+<% if flash[:booboos] %>
+  <% flash[:booboos].each do |error| %>
+    <p> <%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @scout do |f| %>
+  <%= f.label :planet %>
+  <%= f.text_field :planet %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :hair_color %>
+  <%= f.text_field :hair_color %>
+  <%= f.submit %>
+<% end %>
