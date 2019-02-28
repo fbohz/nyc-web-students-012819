@@ -1,0 +1,7 @@
+<h1>THIS IS THE INDEX FOR ALL THE SHELTERS </h1>
+
+<ul>
+  <% @shelters.each do |shelter| %>
+    <li><%= link_to shelter.name + ', ' + shelter.location, shelter %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,8 @@
+<h1><%= @shelter.name %> PAGE</h1>
+<h3><%= @shelter.location %></h3>
+
+<ul>
+  <% @puppies.each do |puppy| %>
+    <li><%= link_to puppy.name + ' - ' + puppy.breed, puppy %></li>
+  <% end %>
+</ul>

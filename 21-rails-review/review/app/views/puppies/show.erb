@@ -1,0 +1,6 @@
+<h1><%= @puppy.name %>'s PAGE </h1>
+<h3>Breed: <%= @puppy.breed %></h3>
+
+<%= link_to 'edit', edit_puppy_path %>
+<%= link_to 'aww adopted', adopt_path(@puppy), method: 'delete', data: { confirm: 'that will be $500'} %>
+<%= button_to 'v2: aww adopted', @puppy, method: 'delete', data: { confirm: 'that will be $500'} %>

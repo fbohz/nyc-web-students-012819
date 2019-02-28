@@ -1,0 +1,10 @@
+<h1>GIVE ME SOME NEW PUPPIES PLEASE </h1>
+
+<%= form_for @puppy do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+  <%= f.collection_select :shelter_id, @shelters, :id, :name %>
+  <%= f.submit %>
+<% end %>
