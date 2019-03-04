@@ -1,11 +1,7 @@
 # Blog Schedule Nyc-Mhtn-Web-012819
 
-## Tuesday, March 5th
-* Dolma Gurung
-* Kyung Won Park
-* Cynthia Eddy
-
 ## Wednesday, March 6th
+* Dolma Gurung
 * Faizan Iqbal
 * David Ren
 * Dana Sevcik
@@ -14,6 +10,8 @@
 * Michael Carneal
 * Brianna Dixon
 * Matthew Masiello
+* Kyung Won Park
+* Cynthia Eddy
 
 ## Tuesday, March 19th
 * Ethan Nam
