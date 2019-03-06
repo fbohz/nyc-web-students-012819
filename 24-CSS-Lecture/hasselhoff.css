@@ -1,0 +1,57 @@
+body {
+  /* background-color: thistle; */
+}
+
+/* BANNER START */
+#banner {
+    border-style: groove;
+    border-width: 30px;
+    border-color: aqua;
+    padding: 10px 30px;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    /* padding-top: 30px; */
+}
+
+#banner-container {
+  width: 100%;
+  background-color: #efd;
+  padding: 3em;
+}
+/* BANNER END */
+
+
+/* FUN FACTS START */
+
+/* FUN FACTS END */
+
+
+/* HORIZONTAL IMAGE START */
+#horizontal-image {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 2em;
+}
+/* HORIZONTAL IMAGE END */
+
+
+/* VERTICAL IMAGE START */
+#vertical-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+}
+/* VERTICAL IMAGE END */
+
+
+/* GRID IMAGE START */
+
+/* GRID IMAGE END */
+
+
+/* CARD START */
+
+/* CARD END */

@@ -1,0 +1,91 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #ffdc74;
+  margin: 0;
+  /* font-family: 'Monoton', cursive; */
+}
+
+/* BANNER START */
+#banner {
+  color: #e8e8e8;
+  text-align: center;
+  /* border-color: chartreuse hotpink teal thistle;
+  border-width: 4em 3em 2em 1em;
+  border-style: groove solid dotted dashed; */
+  /* as above... similar below */
+  border: chartreuse 3em groove;
+  border-radius: 1em;
+  background-color: #ce00f4;
+  width: 50%;
+  margin: auto;
+}
+
+#banner-container {
+  padding: 3em;
+  background-color: lightblue;
+}
+/* BANNER END */
+
+/* FUN FACTS START */
+#fun-facts-container h2 {
+  text-align: center;
+}
+
+#fun-facts-container {
+  background-color: lightpink;
+  padding: 2em;
+}
+
+#fun-facts-content {
+  width: 30%;
+  margin: auto;
+}
+/* FUN FACTS START */
+
+/* HORIZONTAL IMAGE START */
+#horizontal-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+
+  background-color: #ffff0080;
+  padding: 2em;
+}
+/* HORIZONTAL IMAGE START */
+
+/* VERTICAL IMAGE START */
+#vertical-image {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #efd;
+  padding: 2em;
+}
+/* VERTICAL IMAGE START */
+
+/* GRID IMAGE START */
+#grid-image img {
+  /* border: 5px red solid; */
+  width: 100%;
+}
+
+#grid-image {
+  display: grid;
+  grid-template-columns: repeat(3, 0.2fr);
+  justify-content: center;
+
+  background-color: #8000805e;
+  padding: 2em;
+}
+/* GRID IMAGE END */
+
+/* CARD START */
+#frameworks-container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+/* CARD END */
