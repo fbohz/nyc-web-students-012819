@@ -13,8 +13,12 @@ const addition = (a, b) => {
 
 
 function expect(value) {
+  // this should return an object
+  console.log('value is', value);
   return {
-
+    toEqual: function(expectedValue) {
+       return value === expectedValue
+    }
   }
 }
 
