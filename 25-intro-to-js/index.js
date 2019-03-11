@@ -65,7 +65,7 @@ function showLine(line) {
 
   // for(where to start counting; when to stop counting; how to count) {
   for(let i = 0; i < line.length; i++) {
-    // console.log('the customer is', line[i]);
+    console.log('the customer is', line[i]);
     result += `${i + 1}. ${line[i]} `
   }
 
