@@ -12,5 +12,5 @@
   * Write event handler functions as stand-alone functions and in-line functions
   * Manipulate the DOM in response to an event
   * Access the event object passed to an event handler callback function
-  * Introspect on the event object, accessing properties like event.target and correctly identify when to prevent default behavior
+  * Access properties on the event object like event.target and correctly identify when to prevent default behavior
   * Take user input from a form and append it to the DOM without a page refresh
