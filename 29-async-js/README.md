@@ -9,6 +9,15 @@
 
 
 ## CRUD EXERCISE
+Use the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to guide you.
+
+For POST/PATCH:
+The second argument to fetch is an object representing the configuration options for the request.
+
+Your options object will need to include:
+* `method` the http verb
+* `headers` be sure the headers key points to an object with the following keys `{"Content-Type": "application/json"}` (this is telling the API, "hey, the data I am sending along is in the JSON format; be expecting it to look like JSON")
+* `body` the body of the request, (what the "params" would be) be sure to stringify them
 
 * Index:
   - GET `https://safe-river-70277.herokuapp.com/encouraging_notes`

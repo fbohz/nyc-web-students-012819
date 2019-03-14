@@ -1,4 +1,4 @@
-const fetchBooks = () => data.books
+// const fetchBooks = () => data.books
 
 // Google Books API docs:
 // https://developers.google.com/books/docs/v1/using
@@ -8,9 +8,28 @@ const fetchBooks = () => data.books
 // `https://www.googleapis.com/books/v1/volumes?q=inauthor:eco`
 
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('the document is ready');
   // THIS IS CURRENTLY ENTIRELY SYNCHRONOUS, WE HAVE ACCESS TO `data.books`, a static array
-  books = fetchBooks()
-  console.log(books)
+  let books = []
+  console.log('we are about to make an AJAX req');
+  fetch("https://www.googleapis.com/books/v1/volumes?q=fiction")
+  .then(res => res.json())
+  .then(function(json) {
+    console.log('the response is', json);
+    // debugger
+    let formattedBooks = json.items.map(book => ({id: book.id, title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}))
+    renderBooks(formattedBooks)
+  })
+
+  // alexsFetch("https://www.googleapis.com/books/v1/volumes?q=fiction")
+  // .then(function(response) {
+  //   console.log('the response is', response);
+  //   // debugger
+  //   let formattedBooks = response.items.map(book => ({id: book.id, title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}))
+  //   renderBooks(formattedBooks)
+  // })
+  console.log('We hav just made an AJAX req');
+  console.log('books:', books)
 
   // DOM Nodes
   const list = document.querySelector('.ui.relaxed.divided.list')
@@ -61,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // FUNCTIONS: append (render) onto DOM
-  const renderBooks = () => {
+  const renderBooks = (books) => {
     list.innerHTML = ''
     const bookListItems = books.map(createListItem)
     bookListItems.forEach(renderListItem)
@@ -101,10 +120,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Show Books & Attach Event Listener
-  renderBooks()
+  // renderBooks()
 
   list.addEventListener('click', handleListItemClick)
   header.addEventListener('click', handleHeaderClick)
   form.addEventListener('submit', handleSubmit)
 
+
+
+  console.log('allllllll the way at the bottom');
 })

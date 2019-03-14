@@ -4,7 +4,13 @@ require 'pry'
 
 puts "brb"
 
-sleep(5)
+# begin
+#   this_is_not_a_variable
+# rescue NameError
+#   puts 'saved u'
+# end
+
+sleep(3)
 
 puts "im back"
 
@@ -19,10 +25,3 @@ planets = JSON.parse(response.body)
 
 puts 'printing some results'
 puts planets["results"].map { |planet| "* #{planet["name"]}"}
-
-
-begin
-  this_is_not_a_variable
-rescue NameError
-  puts 'saved u'
-end
