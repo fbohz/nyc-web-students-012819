@@ -1,4 +1,4 @@
-// const fetchBooks = () => data.books;
+// const fetchBooks = () => data.books
 
 // Google Books API docs:
 // https://developers.google.com/books/docs/v1/using
@@ -9,15 +9,15 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // THIS IS CURRENTLY ENTIRELY SYNCHRONOUS, WE HAVE ACCESS TO DATA.BOOKS, a static array
-  console.log(data.books);
+  console.log(data.books)
   // DOM Nodes
   const list = document.querySelector('.ui.relaxed.divided.list')
   const header = document.querySelector('.ui.inverted.teal.menu')
 
   // FUNCTIONS: create DOM nodes (components)
   const createListItem = (book) => {
-    const div = document.createElement('div');
-    div.className = 'item';
+    const div = document.createElement('div')
+    div.className = 'item'
     div.innerHTML = `
     <i class="large book middle aligned icon"></i>
     <div class="content">
@@ -26,14 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
         ${book.author}
       </div>
     </div>
-    `;
-
-    return div;
+    `
+    return div
   }
 
   const createCard = (book) => {
-    const div = document.createElement('div');
-    div.className = 'ui fluid card';
+    const div = document.createElement('div')
+    div.className = 'ui fluid card'
     div.innerHTML = `
     <div class="image">
       <img src="${book.imageLink}"/>
@@ -53,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ${book.description}
       </div>
     </div>
-    `;
-    return div;
+    `
+    return div
   }
 
 
-  // FUNCTIONS: render onto DOM
+  // FUNCTIONS: append (render) onto DOM
   const renderBooks = () => {
     list.innerHTML = ''
     const bookListItems = data.books.map(createListItem)
@@ -70,17 +69,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const renderCard = (node) => {
-    list.innerHTML = '';
+    list.innerHTML = ''
     list.appendChild(node)
   }
 
   // FUNCTIONS: EVENT HANDLERS
   const handleListItemClick = (e) => {
-    e.preventDefault();
-    const clicked = e.target;
+    e.preventDefault()
+    const clicked = e.target
 
-    if (clicked.className === 'header') {
-      const id = parseInt(clicked.dataset.id);
+    // if (clicked.className === 'header') {
+    if (clicked.matches('.header')) {
+      const id = parseInt(clicked.dataset.id)
       const book = data.books.find(book => book.id === id )
       const card = createCard(book)
 
@@ -100,4 +100,4 @@ document.addEventListener('DOMContentLoaded', function() {
   list.addEventListener('click', handleListItemClick)
   header.addEventListener('click', handleHeaderClick)
 
-});
+})
