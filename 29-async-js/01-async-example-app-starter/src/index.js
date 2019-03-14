@@ -1,4 +1,4 @@
-// const fetchBooks = () => data.books
+const fetchBooks = () => data.books
 
 // Google Books API docs:
 // https://developers.google.com/books/docs/v1/using
@@ -8,11 +8,14 @@
 // `https://www.googleapis.com/books/v1/volumes?q=inauthor:eco`
 
 document.addEventListener('DOMContentLoaded', function() {
-  // THIS IS CURRENTLY ENTIRELY SYNCHRONOUS, WE HAVE ACCESS TO DATA.BOOKS, a static array
-  console.log(data.books)
+  // THIS IS CURRENTLY ENTIRELY SYNCHRONOUS, WE HAVE ACCESS TO `data.books`, a static array
+  books = fetchBooks()
+  console.log(books)
+
   // DOM Nodes
   const list = document.querySelector('.ui.relaxed.divided.list')
   const header = document.querySelector('.ui.inverted.teal.menu')
+  const form = document.querySelector('.ui.form')
 
   // FUNCTIONS: create DOM nodes (components)
   const createListItem = (book) => {
@@ -60,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // FUNCTIONS: append (render) onto DOM
   const renderBooks = () => {
     list.innerHTML = ''
-    const bookListItems = data.books.map(createListItem)
+    const bookListItems = books.map(createListItem)
     bookListItems.forEach(renderListItem)
   }
 
@@ -78,10 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault()
     const clicked = e.target
 
-    // if (clicked.className === 'header') {
     if (clicked.matches('.header')) {
       const id = parseInt(clicked.dataset.id)
-      const book = data.books.find(book => book.id === id )
+      const book = books.find(book => book.id === id )
       const card = createCard(book)
 
       renderCard(card)
@@ -93,11 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
     renderBooks()
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
 
   // Show Books & Attach Event Listener
   renderBooks()
 
   list.addEventListener('click', handleListItemClick)
   header.addEventListener('click', handleHeaderClick)
+  form.addEventListener('submit', handleSubmit)
 
 })

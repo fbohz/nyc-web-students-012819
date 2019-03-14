@@ -1,11 +1,24 @@
-# Breakdown of a Web Request
-## 1. The client sends an HTTP request
-The client is the browser or whatever is making the request.
+# XML HTTP Request
 
-## 2. The server composes some type of response
-The server composes a response. The response is typically composed of HTML, JSON, XML etc
+# Breakdown of a regular HTTP Request
+1. The client sends an HTTP request in response to a user event
+  * The client is the browser or whatever is making the request.
 
-## 3. The server sends back the response
+2. The server composes some type of response
+  * The server composes a response. The response is typically composed of HTML, JSON, XML etc
 
-## 4. The client replaces the content of the browser with the response
-AKA REFRESHES THE PAGE
+3. The server sends back the response
+
+4. The client clears out the current content in the browser and replaces it with the new content
+  * AKA *A page refresh occurs*
+
+
+# Breakdown of an XHR Request
+
+1.
+
+2.
+
+3.
+
+4.

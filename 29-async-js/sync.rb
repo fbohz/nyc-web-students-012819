@@ -2,23 +2,23 @@ require 'rest-client'
 require 'json' #JavaScript Object Notation
 require 'pry'
 
-puts "taking a quick nap. Be right back"
+puts "brb"
 
 sleep(5)
 
-puts "okay I'm awake now"
+puts "im back"
 
 puts "Making an HTTP GET request with RestClient"
 
-planets = RestClient.get('https://swapi.co/api/planets')
-# binding.pry
+response = RestClient.get('https://swapi.co/api/planets')
 puts "Request is complete"
-
-planets = JSON.parse(planets)
+puts response.inspect
 
 puts "Parsing the JSON from the response"
+planets = JSON.parse(response.body)
 
-puts planets["results"].map { |planet| planet["name"]}
+puts 'printing some results'
+puts planets["results"].map { |planet| "* #{planet["name"]}"}
 
 
 begin
