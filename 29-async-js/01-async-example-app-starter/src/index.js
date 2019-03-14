@@ -116,7 +116,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const term = e.target.querySelector('input').value
+
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}`)
+    .then(res => res.json())
+    .then(function(json) {
+      let formattedBooks = json.items.map(book => ({id: book.id, title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}))
+      renderBooks(formattedBooks)
+    })
   }
+
+  // fetch(
+  //   "http://safe-river-70277.herokuapp.com/encouraging_notes",
+  //   {
+  //     method: 'POST',
+  //     headers: {"Content-Type": "application/json"},
+  //     body: JSON.stringify({message: "it works!", username: "my name"})
+  //   }
+  // )
 
 
   // Show Books & Attach Event Listener
