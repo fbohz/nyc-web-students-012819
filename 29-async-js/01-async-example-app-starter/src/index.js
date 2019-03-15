@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const term = e.target.querySelector('input').value
 
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}`)
+    // below this line is the the same code copied from what we built in lecture
     .then(res => res.json())
     .then(function(json) {
       let formattedBooks = json.items.map(book => ({id: book.id, title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}))
