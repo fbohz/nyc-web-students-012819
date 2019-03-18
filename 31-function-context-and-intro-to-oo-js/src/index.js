@@ -30,18 +30,21 @@ const obj = {
 // via a method of the function object
 
 
-
-
-
-// as a contstructor
-
-
 const listEmployees = function() {
-	console.log('this right here is', this);
+	// console.log('outside the loop this is:', this);
 
-	this.employees.forEach(function(employee) {
+	// const that = this
+
+	// Arrow functions implictly bind the context
+	this.employees.forEach(employee => {
+		// console.log('inside the callback to forEach this is:', this);
 	  console.log(`Employee: ${employee.name} works at ${this.name}`)
 	})
+
+	// this.employees.forEach(function(employee){
+	// 	// console.log('inside the callback to forEach this is:', this);
+	//   console.log(`Employee: ${employee.name} works at ${this.name}`)
+	// }.bind(this))
 }
 
 const tgif = {
@@ -68,6 +71,20 @@ const chipotle = {
 
 
 
+// as a contstructor
+
+// factory pattern
+const dogFactory = function (name, color) {
+	return {
+		name: name,
+		color: color,
+		bark: function(){
+			return `woof im ${this.name}`
+		}
+	}
+
+}
+
 
 
 // object literals
@@ -78,4 +95,31 @@ const chipotle = {
 
 // constructor function MUST BE CALLED WITH NEW KEYWORD
 
+
+
+// const Dog = function (name, color) {
+// 	console.log(this);
+// 	this.name = name
+// 	console.log(this);
+// 	this.color = color
+// 	console.log(this);
+//
+// }
+//
+// Dog.prototype.bark = function() {
+//   console.log(`woof i am ${this.name}`)
+// }
+
+
 // class syntax
+
+class Dog {
+	constructor(name, color) {
+		this.name = name
+		this.color = color
+	}
+
+	bark() {
+		return `woof i am ${this.name}`
+	}
+}

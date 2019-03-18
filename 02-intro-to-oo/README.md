@@ -18,7 +18,7 @@ what a thing can do
 
 data + behavior together in one object
 
-{
+player = {
   player_name: "Alan Anderson",
   number: 0,
   shoe: 16,
