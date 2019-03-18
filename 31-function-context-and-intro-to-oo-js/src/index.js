@@ -1,17 +1,46 @@
 // Function Context
+// "Invocation Context"
 
 // as a function (baseless function)
 
+function thisLogger() {
+	console.log(this)
+}
+// this is the window
+function locationLogger() {
+	console.log(this.location)
+}
+
 // as a method
 
+// a method is a function that is an attached to an object
+// that is a property of that object
+
+// when we invoke a function as a method, this is the obj that function
+// is attached to
+
+const obj = {
+	location: 'nyc',
+	locationLogger: locationLogger,
+	thisLogger: function(){
+		console.log(this)
+	}
+}
+
 // via a method of the function object
+
+
+
+
 
 // as a contstructor
 
 
 const listEmployees = function() {
+	console.log('this right here is', this);
+
 	this.employees.forEach(function(employee) {
-	console.log(`Employee: ${employee.name}`)
+	  console.log(`Employee: ${employee.name} works at ${this.name}`)
 	})
 }
 
