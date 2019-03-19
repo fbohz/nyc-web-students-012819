@@ -21,8 +21,15 @@ class AnimalsController < ApplicationController
     render json: @animals
   end
 
-  def animal_params
-    # {animal => {name => '', diet => 0}}
-    params.require(:animal).permit(:name, :diet)
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+
+    render json: @animal
   end
+
+  # def animal_params
+  #   # {animal => {name => '', diet => 0}}
+  #   params.require(:animal).permit(:name, :diet)
+  # end
 end

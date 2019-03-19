@@ -8,65 +8,18 @@ const API_URL = 'http://localhost:3000'
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log('the DOM content has loaded');
-  const tbody = document.querySelector('tbody')
-  const form = document.querySelector('form.ui.form')
+  const app = new App()
+  app.addAllEventListeners()
+  // app.fetchAllAnimals()
 
-  const createAnimalRow = (animal) => {
-    // console.log('animal', animal);
-    const tr = document.createElement('tr')
-    tr.innerHTML = `
-      <td>${animal.name}</td>
-      <td>${animal.diet}</td>
-      <td>${animal.species_name}</td>
-      <td class='center aligned'>
-        <button class='ui inverted red button'>
-          <i class='key icon'></i>
-          Set ${animal.name} Free
-        </button>
-      </td>
-    `
-
-    return tr
-  }
 
   fetch(`${API_URL}/animals`)
   .then(res => res.json())
   .then(animals => {
-    console.log('here is the response from the API', animals);
-    // new Animal() TODO: this right here
-    animals.map(createAnimalRow).forEach(row => {
-      tbody.appendChild(row)
+    animals.forEach(attributes => {
+      new Animal(attributes)
     })
-  })
 
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log(e);
-    const name = form.querySelector('#animal-name').value
-    const species_name = form.querySelector('#animal-species').value
-    const diet = form.querySelector('#animal-diet .selected').dataset.value
-
-    // const newAnimalRow = createAnimalRow({name: name})
-    // tbody.appendChild(newAnimalRow)
-    fetch(
-      `${API_URL}/animals`,
-      {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: name,
-          species_name: species_name,
-          diet: diet
-        })
-      }
-    )
-    .then(res => res.json())
-    .then(data => {
-      const newAnimalRow = createAnimalRow(data)
-      tbody.appendChild(newAnimalRow)
-    })
+    Animal.renderAll(app.tbody)
   })
 })
