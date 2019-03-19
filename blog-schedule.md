@@ -1,17 +1,5 @@
 # Blog Schedule Nyc-Mhtn-Web-012819
 
-## Wednesday, March 6th
-* Dolma Gurung
-* Faizan Iqbal
-* David Ren
-* Dana Sevcik
-
-## Thursday, March 7th
-* Michael Carneal
-* Brianna Dixon
-* Matthew Masiello
-* Kyung Won Park
-
 ## Wednesday, March 20th
 * Camille Feghali
 * Eric Hardiman
