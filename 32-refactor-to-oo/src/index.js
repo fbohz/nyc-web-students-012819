@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(res => res.json())
   .then(animals => {
     console.log('here is the response from the API', animals);
+    // new Animal() TODO: this right here
     animals.map(createAnimalRow).forEach(row => {
       tbody.appendChild(row)
     })
