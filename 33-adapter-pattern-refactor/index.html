@@ -8,6 +8,7 @@
     <script src="src/index.js"></script>
     <script src="src/animal.js"></script>
     <script src="src/app.js"></script>
+    <script src="src/adapter.js"></script>
   </head>
 
   <body style='background-color:white'>
@@ -33,7 +34,7 @@
       <!-- form -->
       <div class="row">
         <div class='fourteen wide column'>
-          <form class="ui form">
+          <form class="ui error form">
             <div class="three fields">
 
               <div class="field">
@@ -62,6 +63,10 @@
 
             </div>
             <button class="ui basic button" type="submit">Add Animal</button>
+            <div class="ui error message">
+             <div class="header">That Animal cannot be created</div>
+             <p>Something went wrong!!!!</p>
+           </div>
           </form>
         </div>
       </div>

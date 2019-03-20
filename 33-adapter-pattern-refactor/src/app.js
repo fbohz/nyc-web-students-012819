@@ -6,47 +6,38 @@ class App {
 
   handleSubmit(e) {
       e.preventDefault()
-      console.log(e);
-      console.log('WHAT IS THIS IN handleSubmit', this);
       const name = this.form.querySelector('#animal-name').value
       const species_name = this.form.querySelector('#animal-species').value
       const diet = this.form.querySelector('#animal-diet .selected').dataset.value
 
+      adapter.createAnimal({name: name, species_name: species_name, diet: diet})
+        .then(data => {
+          console.log(data);
+          new Animal(data)
+
+          Animal.renderAll(this.tbody)
+        })
+        .catch(error => {
+          console.log('in the catch');
+          console.log('error', error);
+        })
       // const newAnimalRow = createAnimalRow({name: name})
       // tbody.appendChild(newAnimalRow)
-      fetch(
-        `${API_URL}/animals`,
-        {
-          method: 'POST',
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name: name,
-            species_name: species_name,
-            diet: diet
-          })
-        }
-      )
-      .then(res => res.json())
-      .then(data => {
-        new Animal(data)
 
-        Animal.renderAll(this.tbody)
-      })
   }
 
   addAllEventListeners() {
-    // here 'this' is the app instance
-    console.log(this, 'outside');
+    // handle the form being sumbitted
     this.form.addEventListener('submit', this.handleSubmit.bind(this))
+
+
+    // handle the set-free click
     this.tbody.addEventListener('click', (e) => {
       if (e.target.matches('button.set-free')) {
         const id = parseInt(e.target.dataset.id)
         const animal = Animal.findById(id)
 
-        fetch(`${API_URL}/animals/${animal.id}`, {method: 'DELETE'})
-
+      adapter.deleteAnimal(id)
        // console.log(animal);
        animal.destroy()
 
