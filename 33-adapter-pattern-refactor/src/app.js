@@ -10,6 +10,10 @@ class App {
       const species_name = this.form.querySelector('#animal-species').value
       const diet = this.form.querySelector('#animal-diet .selected').dataset.value
 
+      this.form.querySelector('#animal-name').value = ''
+      this.form.querySelector('#animal-species').value = ''
+      this.form.querySelector('#animal-diet .selected')
+
       adapter.createAnimal({name: name, species_name: species_name, diet: diet})
         .then(data => {
           console.log(data);
@@ -20,6 +24,16 @@ class App {
         .catch(error => {
           console.log('in the catch');
           console.log('error', error);
+
+          const errorDiv = document.createElement('div')
+          errorDiv.className = "ui error message"
+
+          errorDiv.innerHTML = `
+            <div class="header">That Animal cannot be created</div>
+            <p>${error}</p>
+          `
+          this.form.appendChild(errorDiv)
+
         })
       // const newAnimalRow = createAnimalRow({name: name})
       // tbody.appendChild(newAnimalRow)
