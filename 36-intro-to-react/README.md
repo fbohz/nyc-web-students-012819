@@ -9,6 +9,9 @@ Intro to React
 4. `props`
 5. Expressions
 
+// create-react-app is your rails new
+// read about webpack
+
 ## SWBAT
 
 **create-react-app**
