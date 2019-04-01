@@ -25,36 +25,7 @@ import * as serviceWorker from './serviceWorker';
 // https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg
 // https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg
 // fuynctional component syntax
-function ScoreCard(props) {
-  // mass assignment => {}
-  // when something gets rendered and put onto the screen, it runs this code
-  console.log(props);
-  // image, teamname, record, score
-  // if you want to interpolate in JSX,
-  // #{}, <%= %>, ${} => {}
-  return (
-    <div>
-      <div>
-        <h3>Final/OT</h3>
-        <div>
-          <img src={props.team_a_image} />
-          <p>{props.team_a_name} <span>(57-20)</span></p>
-          <p>{props.team_a_score}</p>
-        </div>
-        <div>
-          <img src={props.team_b_image} />
-          <p>Atlana <span>(57-20)</span></p>
-          <p>136</p>
-        </div>
-      </div>
-      <div>
-        <button>WATCH</button>
-        <button>BOX SCORE</button>
-        <button>GAME DETAIL</button>
-      </div>
-    </div>
-  )
-}
+import ScoreCard from './ScoreCard';
 
 
 // dsifferen between a function and class component
@@ -103,30 +74,16 @@ class ScoreCardy extends React.Component {
 // this is a component
 // they must be upper case
 
-//
-ReactDOM.render(
-  <div>
-    <h1>NBA.com</h1>
-    <ScoreCard
-      team_a_image="https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg"
-      team_b_image="https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg"
-      team_a_name="Milwaukee Bucks"
-      team_a_score={135}
-    />
-    <ScoreCard
-      team_a_image="https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg"
-      team_b_image="https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg"
-      team_a_name="New York Knicks"
-      team_a_score={135}
-    />
+// we get to decide how this data from the API is structured
+// we could always just transform that data
+// Think about the ideal data you want:
 
-    <ScoreCardy
-      team_a_image="https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg"
-      team_b_image="https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg"
-      team_a_name="New York Knicks"
-      team_a_score={135}
-    />
-  </div>
+// https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg
+// https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg
+// what is the ideal data we'd use?
+
+ReactDOM.render(
+  <App />
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

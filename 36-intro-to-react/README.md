@@ -16,23 +16,23 @@ Intro to React
 
 **create-react-app**
 
-- [ ] Understand how create-react-app works and what it offers a developer
-- [ ] Setup a new React app and play around with building UIs
+- [x] Understand how create-react-app works and what it offers a developer
+- [x] Setup a new React app and play around with building UIs
 
 **React**
 
-- [ ] Visualize/Identify Components on any website
-- [ ] Explain what a Component is conceptually in the UI
-- [ ] Use JSX to build custom Components
-- [ ] Render both JSX and Components in the browser
-- [ ] Use `props` to make Components dynamic and reusable
-- [ ] Use expressions `{ }` to make Components even more dynamic
-- [ ] See how `props` are to Components as arguments are to functions
+- [x] Visualize/Identify Components on any website
+- [x] Explain what a Component is conceptually in the UI
+- [x] Use JSX to build custom Components
+- [x] Render both JSX and Components in the browser
+- [x] Use `props` to make Components dynamic and reusable
+- [x] Use expressions `{ }` to make Components even more dynamic
+- [x] See how `props` are to Components as arguments are to functions
 
 **Future**
 
-- [ ] Begin to build modular, reusable, and composable Components
-- [ ] Begin to see the declarative nature of React
+- [x] Begin to build modular, reusable, and composable Components
+- [x] Begin to see the declarative nature of React
 
 ## Outline
 
