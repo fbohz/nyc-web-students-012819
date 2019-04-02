@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ScoreCard from './ScoreCard';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ScoreCard from "./ScoreCard";
 
 const data = [
   {
@@ -10,14 +10,14 @@ const data = [
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg",
       score: 135,
       record: "57-20",
-      winner: false,
+      winner: false
     },
     away: {
       name: "Hawks",
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg",
       score: 136,
       record: "28-49",
-      winner: true,
+      winner: true
     }
   },
   {
@@ -26,14 +26,14 @@ const data = [
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg",
       score: 135,
       record: "57-20",
-      winner: false,
+      winner: false
     },
     away: {
       name: "NETS",
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg",
       score: 136,
       record: "28-49",
-      winner: true,
+      winner: true
     }
   },
   {
@@ -42,14 +42,14 @@ const data = [
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg",
       score: 135,
       record: "57-20",
-      winner: false,
+      winner: false
     },
     away: {
       name: "OMG",
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg",
       score: 136,
       record: "28-49",
-      winner: true,
+      winner: true
     }
   },
   {
@@ -58,17 +58,17 @@ const data = [
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/MIL.svg",
       score: 135,
       record: "57-20",
-      winner: false,
+      winner: false
     },
     away: {
       name: "Hawks",
       url: "https://cdn.nba.net/assets/logos/teams/secondary/web/ATL.svg",
       score: 136,
       record: "28-49",
-      winner: true,
+      winner: true
     }
-  },
-]
+  }
+];
 
 // eventually what goes in state
 class App extends Component {
@@ -78,10 +78,15 @@ class App extends Component {
   // mod 1 => map
   renderScoreCards() {
     // if props.team.winner { return "whatever" }
-    return data.map(game => <ScoreCard game={game} />)
+    return data.map(game => <ScoreCard game={game} />);
+  }
+
+  componentDidMount() {
+    console.log("App Did Mount");
   }
 
   render() {
+    console.log("App Render");
     // undefined, null, true, false
     return (
       <div>
