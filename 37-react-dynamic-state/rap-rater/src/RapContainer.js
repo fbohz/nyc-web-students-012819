@@ -7,7 +7,10 @@ class RapContainer extends Component {
     ));
 
     return (
-      <div>{this.props.rappers.length > 0 ? rappers : <h1>Loading</h1>}</div>
+      <div>
+        <h2>Index</h2>
+        {this.props.rappers.length > 0 ? rappers : <h1>Loading</h1>}
+      </div>
     );
   }
 }
