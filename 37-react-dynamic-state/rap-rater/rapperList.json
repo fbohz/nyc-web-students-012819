@@ -33,7 +33,7 @@
       "top hit": "No Problems"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Cole",
       "rating": 0,
       "sadImage": "https://res.cloudinary.com/allamerican/image/fetch/t_face_s270/https://speakerdata2.s3.amazonaws.com/photo/image/893580/j-cole-2016-abg-billboard-1548.jpg",
@@ -41,7 +41,7 @@
       "top hit": "Middle Child"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Kendrick",
       "rating": 0,
       "sadImage": "https://runthetrap.com/wp-content/uploads/2017/08/KL.jpg",
@@ -49,7 +49,7 @@
       "top hit": "Humble"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "RiffRaff",
       "rating": 0,
       "happyImage": "https://consequenceofsound.files.wordpress.com/2018/06/riff-raff-rape-blunt-canceled-tour.png?w=807",
