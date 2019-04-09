@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import RapCard from "./RapCard";
 import RapContainer from "./RapContainer";
+import Favorites from "./Favorites";
+import RapCard from "./RapCard";
 import SearchForm from "./SearchForm";
 import Form from "./CreateForm";
 
@@ -16,6 +17,7 @@ class App extends Component {
   // So you can change state as if it were any other object (ie this.state.rappers = something)
   state = {
     rappers: [],
+    favorites: [],
     searchTerm: ""
   };
 
@@ -40,6 +42,31 @@ class App extends Component {
     );
   };
 
+  editSubmitHandler = (rapperObj, song) => {
+    let newArr = [...this.state.rappers];
+    let rapper = newArr.find(rapper => rapper.id === rapperObj.id);
+    rapper["top hit"] = song;
+    this.setState({
+      rappers: newArr
+    });
+  };
+
+  addFavoriteClickHandler = rapperObj => {
+    console.log("favoritting");
+    this.setState({
+      favorites: [...this.state.favorites, rapperObj]
+    });
+  };
+
+  removeFavoriteClickHandler = rapperObj => {
+    let newArr = [...this.state.favorites].filter(
+      rapper => rapper.id !== rapperObj.id
+    );
+    this.setState({
+      favorites: newArr
+    });
+  };
+
   render() {
     return (
       <div>
@@ -49,7 +76,15 @@ class App extends Component {
           changeHandler={this.changeHandler}
           searchTerm={this.state.searchTerm}
         />
-        <RapContainer rappers={this.filterRappers()} />
+        <RapContainer
+          rappers={this.filterRappers()}
+          editSubmitHandler={this.editSubmitHandler}
+          addFavoriteClickHandler={this.addFavoriteClickHandler}
+        />
+        <Favorites
+          rappers={this.state.favorites}
+          removeFavoriteClickHandler={this.removeFavoriteClickHandler}
+        />
       </div>
     );
   }

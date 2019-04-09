@@ -3,7 +3,12 @@ import RapCard from "./RapCard";
 class RapContainer extends Component {
   render() {
     let rappers = this.props.rappers.map(rapperObj => (
-      <RapCard key={rapperObj.name} rapper={rapperObj} />
+      <RapCard
+        key={rapperObj.name}
+        rapper={rapperObj}
+        editSubmitHandler={this.props.editSubmitHandler}
+        addFavoriteClickHandler={this.props.addFavoriteClickHandler}
+      />
     ));
 
     return (
