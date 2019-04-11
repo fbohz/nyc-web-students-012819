@@ -17,7 +17,10 @@ class RapCard extends React.Component {
     return (
       <div>
         {this.state.renderInfo ? (
-          <RapInfo rapper={this.props.rapper} />
+          <RapInfo
+            rapper={this.props.rapper}
+            removeFavoriteClickHandler={this.props.removeFavoriteClickHandler}
+          />
         ) : (
           <div>
             <h2>{this.props.rapper.name}</h2>
