@@ -1,29 +1,34 @@
-Checkout into the "react-practice" branch of the lecture repo and complete the following deliverables.
+## React Router
 
-_Note_ Feel free to pair/work in groups on this project. However, if you do so, you will need to Fork the repo so you can add each other as collaborators. Otherwise, the code will only live on one computer.
+Setting up:
 
-\*\*Deliverables:
+- react-router-dom
+- npm install --save react-router-dom
+- import {BrowserRouter} from 'react-router-dom'
 
-1. `RapContainer` should display a list of rappers, including the rapper's name, img, and rating
+## BrowserRouter
 
-2. Add an `edit` button that renders a form that allows the user to change a rapper's "top hit"
+- Listens for route change && makes that information accessible
 
-3. Add a `Favorites` container that renders all of the User's favorite rappers
+## Route
 
-4. When a User clicks on a rapper's image in the `Rap Container`, that rapper should be added to `Favorites`
+- Conditionally render a component based on the route
+- Routing with render vs component
+- Route props
 
-5. The rapper in `Favorites` should have both an `unfavorite` and `more info` button
+## Switch
 
-6. When a User clicks on `unfavorite` it should remove that rapper from `Favorites`
+- Pick first route that matches
+- Switch w/ dynamic routes
 
-7. When a User clicks on `more info` it should render a `RapInfo` component (you will have to create this yourself) that displays the rapper's "top hit"
+## Link
 
-8. The `RapInfo` component should also have a `back` button that flips the `RapperInfo` card back to a `RapCard`
+- Changes the url we see in the browser
+- Must have a 'to' prop
 
-Parking Lot:
+## Time Dependent:
 
-4. BONUS: Rappers should be sorted by rating in the `RapContainer`
-
-5. Add an `upvote` and `downvote` button that increases/decreases a rapper's rating
-
-6. The rapper with the highest rating should display their "happyImage". All other rappers should display their "sadImage"
+- history object
+- history.push
+- <Redirect />
+- withRouter()

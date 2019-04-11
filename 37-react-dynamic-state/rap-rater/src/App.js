@@ -1,54 +1,17 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import RapContainer from "./RapContainer";
-import Favorites from "./Favorites";
-import RapCard from "./RapCard";
-import SearchForm from "./SearchForm";
-import Form from "./CreateForm";
+import RapContainer from "./containers/RapContainer";
+import Favorites from "./containers/Favorites";
+import RapCard from "./components/RapCard";
+import Home from "./components/Home";
+import Error from "./components/Error";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
-  // constructor(){
-  //   super()
-  //   this.state = {}
-  // }
-
-  // State is just an object that lives as an attribute for this instance
-  // So you can change state as if it were any other object (ie this.state.rappers = something)
   state = {
-    rappers: [],
-    favorites: [],
-    searchTerm: ""
-  };
-
-  componentDidMount() {
-    fetch("http://localhost:4000/rapperList")
-      .then(resp => resp.json())
-      .then(rappers => this.setState({ rappers: rappers }));
-  }
-
-  submitHandler = rapper => {
-    let newArray = [rapper, ...this.state.rappers];
-    this.setState({ rappers: newArray }, () => console.log(this.state.rappers));
-  };
-
-  changeHandler = e => {
-    this.setState({ searchTerm: e.target.value });
-  };
-
-  filterRappers = () => {
-    return this.state.rappers.filter(rapperObj =>
-      rapperObj.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-    );
-  };
-
-  editSubmitHandler = (rapperObj, song) => {
-    let newArr = [...this.state.rappers];
-    let rapper = newArr.find(rapper => rapper.id === rapperObj.id);
-    rapper["top hit"] = song;
-    this.setState({
-      rappers: newArr
-    });
+    favorites: []
   };
 
   addFavoriteClickHandler = rapperObj => {
@@ -68,26 +31,32 @@ class App extends Component {
   };
 
   render() {
+    console.log("APP Render");
     return (
       <div>
-        <Form submitHandler={this.submitHandler} />
-        <br />
-        <SearchForm
-          changeHandler={this.changeHandler}
-          searchTerm={this.state.searchTerm}
-        />
-        <RapContainer
-          rappers={this.filterRappers()}
-          editSubmitHandler={this.editSubmitHandler}
-          addFavoriteClickHandler={this.addFavoriteClickHandler}
-        />
-        <Favorites
-          rappers={this.state.favorites}
-          removeFavoriteClickHandler={this.removeFavoriteClickHandler}
-        />
+        <NavBar />
+        <Switch>
+          <Route
+            path="/rappers"
+            render={routerProps => (
+              <RapContainer
+                addFavoriteClickHandler={this.addFavoriteClickHandler}
+              />
+            )}
+          />
+          <Route path="/home" component={Home} />
+          <Route path="/" component={Error} />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
+
+//
+
+// <Favorites
+//   rappers={this.state.favorites}
+//   removeFavoriteClickHandler={this.removeFavoriteClickHandler}
+// />
