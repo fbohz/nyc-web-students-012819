@@ -11,10 +11,13 @@ class RapContainer extends Component {
   };
 
   componentDidMount() {
-    console.log("C Did Mount");
-    fetch("http://localhost:4000/rapperList")
-      .then(resp => resp.json())
-      .then(rappers => this.setState({ rappers: rappers }));
+    if (this.props.user.username) {
+      fetch("http://localhost:4000/rapperList")
+        .then(resp => resp.json())
+        .then(rappers => this.setState({ rappers: rappers }));
+    } else {
+      this.props.history.push("/signup");
+    }
   }
 
   submitHandler = rapper => {
@@ -32,6 +35,17 @@ class RapContainer extends Component {
     );
   };
 
+  createRapCards = () => {
+    return this.state.rappers.map(rapperObj => (
+      <RapCard
+        key={rapperObj.name}
+        rapper={rapperObj}
+        editSubmitHandler={this.editSubmitHandler}
+        addFavoriteClickHandler={this.props.addFavoriteClickHandler}
+      />
+    ));
+  };
+
   editSubmitHandler = (rapperObj, song) => {
     let newArr = [...this.state.rappers];
     let rapper = newArr.find(rapper => rapper.id === rapperObj.id);
@@ -42,16 +56,6 @@ class RapContainer extends Component {
   };
 
   render() {
-    console.log("Container Render");
-    let rappers = this.state.rappers.map(rapperObj => (
-      <RapCard
-        key={rapperObj.name}
-        rapper={rapperObj}
-        editSubmitHandler={this.editSubmitHandler}
-        addFavoriteClickHandler={this.props.addFavoriteClickHandler}
-      />
-    ));
-
     return (
       <div>
         <h2>Rap Container</h2>
@@ -64,7 +68,6 @@ class RapContainer extends Component {
                 let rapper = this.state.rappers.find(
                   rapper => rapper.id === id
                 );
-                console.log("FOUND rapper", this.state.rappers);
                 return <RapCard rapper={rapper} />;
               }}
             />
@@ -80,7 +83,11 @@ class RapContainer extends Component {
                       changeHandler={this.changeHandler}
                       searchTerm={this.state.searchTerm}
                     />
-                    {this.state.rappers.length > 0 ? rappers : <h1>Loading</h1>}
+                    {this.state.rappers.length > 0 ? (
+                      this.createRapCards()
+                    ) : (
+                      <h1>Loading</h1>
+                    )}
                   </div>
                 );
               }}
@@ -94,4 +101,4 @@ class RapContainer extends Component {
   }
 }
 
-export default RapContainer;
+export default withRouter(RapContainer);

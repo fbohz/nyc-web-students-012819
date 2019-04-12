@@ -1,34 +1,11 @@
-## React Router
+## Auth
 
-Setting up:
+- What is the difference between Authentication and Authorization?
 
-- react-router-dom
-- npm install --save react-router-dom
-- import {BrowserRouter} from 'react-router-dom'
+- How does our front end language/framework communicate to our server?
 
-## BrowserRouter
+- How are client-side and server-side routes used in the Auth workflow?
 
-- Listens for route change && makes that information accessible
+- What happens to the state of a React component after a page refresh?
 
-## Route
-
-- Conditionally render a component based on the route
-- Routing with render vs component
-- Route props
-
-## Switch
-
-- Pick first route that matches
-- Switch w/ dynamic routes
-
-## Link
-
-- Changes the url we see in the browser
-- Must have a 'to' prop
-
-## Time Dependent:
-
-- history object
-- history.push
-- <Redirect />
-- withRouter()
+- What is JWT?

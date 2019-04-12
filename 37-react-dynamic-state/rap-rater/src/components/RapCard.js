@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import EditForm from "./EditForm";
 import RapInfo from "./RapInfo";
 
@@ -28,6 +28,7 @@ class RapCard extends React.Component {
             <h4>{this.props.rapper.rating}</h4>
 
             <img
+              alt=""
               src={this.props.rapper.sadImage}
               onClick={() =>
                 this.props.addFavoriteClickHandler(this.props.rapper)
