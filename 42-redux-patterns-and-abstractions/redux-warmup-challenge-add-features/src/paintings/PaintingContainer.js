@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import PaintingList from './PaintingList';
 import DeleteablePainting from './DeleteablePainting';
 import paintings from '../data/artworks'
+import { connect } from 'react-redux'
 
 class PaintingContainer extends Component {
-  state = {paintings: [], activePainting: null }
-
-  componentDidMount() {
-    this.setState({ paintings, activePainting: paintings[14] })
-  }
-
   render() {
-    // console.log('THIS.PROPS in Container', this.props);
     return (
       <div className="row">
         <div className="six wide column">
-          <PaintingList paintings={this.state.paintings} />
+          <PaintingList paintings={this.props.paintings} />
         </div>
         <div className="ten wide column">
-          {this.state.activePainting ? (
-            <DeleteablePainting painting={this.state.activePainting} />
+          {this.props.activePainting ? (
+            <DeleteablePainting painting={this.props.activePainting} />
           ) : (
             <h3>select a painting</h3>
           )}
@@ -29,4 +23,13 @@ class PaintingContainer extends Component {
   }
 }
 
-export default PaintingContainer
+const mapStateToProps = (state) => {
+  // {currentUser: {id: 1, username: 'wahetev'}}
+
+  return {
+    paintings: state.paintings,
+    activePainting: state.activePainting
+  }
+}
+
+export default connect(mapStateToProps)(PaintingContainer)

@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-const PaintingListItem = ({ painting, selectPainting }) => {
+const PaintingListItem = (props) => {
   return (
-    <div onClick={() => selectPainting(painting.id)} className="ui item">
-      <span style={{ cursor: 'pointer' }}>{painting.title}</span>
+    <div onClick={() => {
+      props.dispatch({type: "SELECT_PAINTING"})
+    }} className="ui item">
+      <span style={{ cursor: 'pointer' }}>{props.painting.title}</span>
     </div>
   );
 };
 
-export default PaintingListItem;
+export default connect()(PaintingListItem)
