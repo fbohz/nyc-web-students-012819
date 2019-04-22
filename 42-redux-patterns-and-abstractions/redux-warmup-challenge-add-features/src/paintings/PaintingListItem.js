@@ -1,14 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
+import actions from '../actions'
+
 const PaintingListItem = (props) => {
+  console.log('props', props);
   return (
     <div onClick={() => {
-      props.dispatch({type: "SELECT_PAINTING"})
+      props.selectPainting(props.painting)
     }} className="ui item">
       <span style={{ cursor: 'pointer' }}>{props.painting.title}</span>
     </div>
   );
 };
 
-export default connect()(PaintingListItem)
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     selectPainting: (painting) => dispatch(selectPainting(painting))
+//   }
+// }
+
+export default connect(null, actions)(PaintingListItem)

@@ -1,23 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import actions from '../actions'
 
-const DeleteConfirmation = props => {
+const DeleteConfirmation = ({deletePainting, handleCancelClick, painting}) => {
   // console.log('DeleteConfirmation props', props);
   return (
     <div className="item">
       <div className="ui small image">
-        <img src={props.painting.image} alt={props.painting.slug} />
+        <img src={painting.image} alt={painting.slug} />
       </div>
       <div className="middle aligned content">
-        <h3>Are you sure you want to remove {props.painting.title}</h3>
+        <h3>Are you sure you want to remove {painting.title}</h3>
         <div className="ui buttons">
           <div
-            onClick={props.handleCancelClick}
+            onClick={handleCancelClick}
             className="ui basic green button"
           >
             No
           </div>
           <div
-            onClick={() => props.handleDelete(props.painting.id)}
+            onClick={() => deletePainting(painting.id)}
             className="ui red basic button"
           >
             Delete It
@@ -27,4 +29,4 @@ const DeleteConfirmation = props => {
     </div>
   );
 };
-export default DeleteConfirmation;
+export default connect(null, actions)(DeleteConfirmation)

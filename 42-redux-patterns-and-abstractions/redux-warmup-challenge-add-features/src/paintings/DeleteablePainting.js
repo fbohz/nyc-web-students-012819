@@ -15,7 +15,6 @@ export default class DeleteablePainting extends React.Component {
     return this.state.deleteView ? (
       <DeleteConfirmation
         handleCancelClick={this.handleToggle}
-        handleDelete={this.props.handleDelete}
         painting={this.props.painting}
       />
     ) : (
