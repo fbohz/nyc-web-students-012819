@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 
 const PaintingListItem = (props) => {
-  console.log('props', props);
+  // console.log('props', props);
   return (
     <div onClick={() => {
       props.selectPainting(props.painting.id)

@@ -29,6 +29,7 @@ class PaintingContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('in MSTP, the state is', state);
   const activePainting = state.paintings.find(painting => painting.id === state.activePaintingId)
 
   return {

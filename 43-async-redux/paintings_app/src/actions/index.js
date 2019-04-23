@@ -6,8 +6,22 @@ import {
 
 import paintings from '../data/artworks'
 
+const API_URL = 'http://localhost:3001/api/paintings'
+
 export const fetchPaintings = () => {
-  return {type: FETCH_PAINTINGS, payload: paintings}
+  return (dispatch) => {
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(paintings => {
+      dispatch({type: FETCH_PAINTINGS, payload: paintings})
+    })
+  }
+  // eventually this needs to be async
+
+  // return fetch(API_URL).then(res => res.json()).then(data => {
+  //   return {type: FETCH_PAINTINGS, payload: paintings}
+  // })
+  // return {type: FETCH_PAINTINGS, payload: []}
 }
 
 export const selectPainting = (paintingId) => {
