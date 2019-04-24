@@ -32,4 +32,4 @@ const DeleteConfirmation = ({deletePainting, handleCancelClick, painting}) => {
     </div>
   );
 };
-export default connect(null, actions)(DeleteConfirmation)
+export default connect(null, {deletePainting: actions.deletePainting})(DeleteConfirmation)
