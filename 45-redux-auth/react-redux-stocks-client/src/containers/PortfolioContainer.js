@@ -7,13 +7,11 @@ class PortfolioContainer extends Component {
     return (
       <div>
         <h2>My Portfolio</h2>
-          {
-            //render your portfolio stocks here
-          }
+        
+        {/* <StockList stocks={this.props.stocks} /> */}
       </div>
     );
   }
-
 }
 
 export default PortfolioContainer;

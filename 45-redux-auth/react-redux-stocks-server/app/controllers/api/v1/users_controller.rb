@@ -4,12 +4,12 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.create(user_params)
 
-    if user.valid
+    if user.valid?
       token = encode_token(user.id)
 
       render json: {user: UserSerializer.new(user), token: token}
     else
-      render json: {errors: 'please fill out the correct information'}
+      render json: {errors: 'Fill out the correct information'}
     end
   end
 

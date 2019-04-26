@@ -6,73 +6,71 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def stocks
-  [
-    { "id": 1,
-      "ticker" :"GOOG",
-      "name": "Google",
-      "type": "Tech",
-      "price": 1194
-    },
-    { "id": 2,
-      "ticker" :"FB",
-      "name": "Facebook",
-      "type": "Tech",
-      "price": 168
-    },
-    { "id": 3,
-      "ticker" :"TWTR",
-      "name": "Twitter",
-      "type": "Tech",
-      "price": 29
-    },
-    { "id": 4,
-      "ticker" :"AMZN",
-      "name": "Amazon",
-      "type": "Tech",
-      "price": 2013
-    },
-    { "id": 5,
-      "ticker" :"V",
-      "name": "Visa",
-      "type": "Finance",
-      "price": 150
-    },
-    { "id": 6,
-      "ticker" :"BAC",
-      "name": "Bank of America",
-      "type": "Finance",
-      "price": 29
-    },
-    { "id": 7,
-      "ticker" :"JPM",
-      "name": "JP Morgan",
-      "type": "Finance",
-      "price": 114
-    },
-    { "id": 8,
-      "ticker" :"C",
-      "name": "Citi Bank",
-      "type": "Finance",
-      "price": 72
-    },
-    { "id": 9,
-      "ticker" :"NKE",
-      "name": "Nike",
-      "type": "Sportswear",
-      "price": 84
-    },
-    { "id": 10,
-      "ticker" :"UAA",
-      "name": "Under Armour",
-      "type": "Sportswear",
-      "price": 21
-    }
-  ]
-end
+stocks = [
+  { "id": 1,
+    "ticker": "GOOG",
+    "name": "Google",
+    "category": "Tech",
+    "price": 1194
+  },
+  { "id": 2,
+    "ticker": "FB",
+    "name": "Facebook",
+    "category": "Tech",
+    "price": 168
+  },
+  { "id": 3,
+    "ticker": "TWTR",
+    "name": "Twitter",
+    "category": "Tech",
+    "price": 29
+  },
+  { "id": 4,
+    "ticker": "AMZN",
+    "name": "Amazon",
+    "category": "Tech",
+    "price": 2013
+  },
+  { "id": 5,
+    "ticker": "V",
+    "name": "Visa",
+    "category": "Finance",
+    "price": 150
+  },
+  { "id": 6,
+    "ticker": "BAC",
+    "name": "Bank of America",
+    "category": "Finance",
+    "price": 29
+  },
+  { "id": 7,
+    "ticker": "JPM",
+    "name": "JP Morgan",
+    "category": "Finance",
+    "price": 114
+  },
+  { "id": 8,
+    "ticker": "C",
+    "name": "Citi Bank",
+    "category": "Finance",
+    "price": 72
+  },
+  { "id": 9,
+    "ticker": "NKE",
+    "name": "Nike",
+    "category": "Sportswear",
+    "price": 84
+  },
+  { "id": 10,
+    "ticker": "UAA",
+    "name": "Under Armour",
+    "category": "Sportswear",
+    "price": 21
+  }
+]
 
 stocks.each do |stock|
-  Stock.create(ticker: stock["ticker"], name: stock["name"], type: stock["type"], price: stock["price"])
+  Stock.create(ticker: stock[:ticker], name: stock[:name], category: stock[:type], price: stock[:price])
 end
 
 10.times do

@@ -4,9 +4,9 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
-        <h1 className="text-center">Flatiron Stock Exchange</h1>
-      </header>
+      <div style={{textAlign: 'center'}}>
+        <h1>Flatiron Stock Exchange</h1>
+      </div>
     );
   }
 

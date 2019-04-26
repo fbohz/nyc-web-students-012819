@@ -1,21 +1,20 @@
 import React from 'react'
+import { List } from 'semantic-ui-react';
 
-const Stock = props => (
-  <div>
-
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{
-            //Company Name
-          }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
-      </div>
-    </div>
-
-
-  </div>
-);
+// /stocks
+const Stock = props => {
+  const { stock } = props
+  console.log(props)
+  return (
+    <List.Item style={{marginBottom: "5px"}}>
+      <List.Header>
+        {stock.name}
+      </List.Header>
+      <List.Content>
+        ${stock.price}
+      </List.Content>
+    </List.Item>    
+  );
+}
 
 export default Stock

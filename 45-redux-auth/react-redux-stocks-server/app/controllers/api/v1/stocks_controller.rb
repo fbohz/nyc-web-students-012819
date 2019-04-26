@@ -1,6 +1,6 @@
 class Api::V1::StocksController < ApplicationController
-  before_action :authorized
-
+  before_action :authorized, only: [:purchase]
+  
   def index
     stocks = Stock.all
 
