@@ -23,10 +23,13 @@ Make it pretty.
 
 How do we add CSS to our HTML page?
 * Inline
-  * `<h2 style=property:value or values;”>`
+  ```
+  <h2 style=property:value or values;”>
+  ```
 
 * Internal
-  ```<head>
+  ```
+  <head>
   	<meta…></meta>
   	<title…></title>
   	<style>
@@ -34,12 +37,15 @@ How do we add CSS to our HTML page?
   			property:value or values;
   		}
   	</style>
-  </head>```
+  </head>
+  ```
 
 * External
   - For an external stylesheet we have to add a link in the head that looks something like this:
 
+  ```
   <link rel="stylesheet" href="./hasselhoff.css">
+  ```
 
 
 ## Anatomy of the declaration block
