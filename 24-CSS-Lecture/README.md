@@ -23,7 +23,7 @@ Make it pretty.
 
 How do we add CSS to our HTML page?
 * Inline
-  <h2 style=property:value or values;”>
+  `<h2 style=property:value or values;”>`
 
 * Internal
   <head>
